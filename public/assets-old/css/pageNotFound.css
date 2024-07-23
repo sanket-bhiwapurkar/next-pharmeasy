@@ -1,0 +1,5 @@
+@import './common.css';
+
+.not-found-desktop {
+    max-width: 768px;
+}

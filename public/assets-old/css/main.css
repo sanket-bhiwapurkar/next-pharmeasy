@@ -1,0 +1,17 @@
+@import './common.css';
+@import './navbar.css';
+@import './footer.css';
+
+.faq-img {
+    max-width: 500px;
+}
+
+.contact-us-body {
+    background-color: var(--white);
+    box-shadow: 0px 4px 16px 0px #bfbfbf;
+}
+
+.contact-us-separator {
+    width: 3px;
+    height: 100%;
+}
