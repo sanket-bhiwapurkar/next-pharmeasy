@@ -49,7 +49,7 @@ function renderLogoSection() {
 
       {/* Login Toggle */}
       <IconButton
-        aria-label="login-button"
+        aria-label="login"
         color="inherit"
         size="small"
         sx={{ display: { lg: "none" } }}
@@ -58,7 +58,7 @@ function renderLogoSection() {
       </IconButton>{/* End Login Toggle */}
 
       {/* Logo */}
-      <Link href="/">
+      <Link aria-label="pharmeasy logo, go to home" href="/">
         <Image
           alt="logo"
           className="lg:hidden"
@@ -81,7 +81,9 @@ function renderLogoSection() {
         gap: 4
       }}>
         <Divider flexItem orientation="vertical" variant="middle" />
-        <ButtonBase sx={{ display: "block" }}>
+        <ButtonBase
+          aria-label="express delivery select pincode"
+          sx={{ display: "block" }}>
           <span>⚡</span>
           <Typography variant="caption">
             Express delivery to
@@ -116,6 +118,7 @@ function renderActionGroup() {
 
       {/* Download App */}
       <Button
+        aria-label="download app"
         color="secondary"
         disableElevation
         startIcon={<FaMobileAlt />}
@@ -123,11 +126,11 @@ function renderActionGroup() {
         variant="contained"
       >
         Download App
-      </Button>{/* Download App */}
+      </Button>{/* End Download App */}
 
       {/* Login Toggle */}
       <IconButton
-        aria-label="offers"
+        aria-label="login"
         color="inherit"
         size="small"
         sx={{
