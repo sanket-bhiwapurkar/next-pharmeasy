@@ -1,8 +1,8 @@
 'use client';
-import { Roboto } from 'next/font/google';
+import { Roboto, Inter } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 
-const roboto = Roboto({
+const inter = Inter({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
@@ -10,22 +10,33 @@ const roboto = Roboto({
 
 const theme = createTheme({
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: inter.style.fontFamily,
   },
   breakpoints: {
     values: {
       xs: 0,
       sm: 576,
       md: 768,
-      lg: 992,
-      xl: 1200,
+      lg: 1024,
+      xl: 1280,
     },
   },
   palette: {
     secondary: {
       main: "#eef4ff",
-      contrastText: "#30363C"
+      contrastText: "#30363C",
+      dark: '#dce4f1',
     }
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        text: {
+          color: '#30363C', // Replace 'custom-color' with your desired color
+          textTransform: "none"
+        },
+      },
+    },
   }
 });
 
