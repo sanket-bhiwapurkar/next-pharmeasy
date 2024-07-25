@@ -34,8 +34,6 @@ const Header = () => {
   );
 };
 
-export default Header;
-
 function renderLogoSection() {
   return (
     <Box
@@ -48,6 +46,8 @@ function renderLogoSection() {
         marginRight: "auto",
       }}
     >
+
+      {/* Login Toggle */}
       <IconButton
         aria-label="login-button"
         color="inherit"
@@ -55,8 +55,9 @@ function renderLogoSection() {
         sx={{ display: { lg: "none" } }}
       >
         <FaRegUser />
-      </IconButton>
+      </IconButton>{/* End Login Toggle */}
 
+      {/* Logo */}
       <Link href="/">
         <Image
           alt="logo"
@@ -72,8 +73,9 @@ function renderLogoSection() {
           src="/images/pharmeasy-logos/logo_big.svg"
           width={150}
         />
-      </Link>
+      </Link>{/* End Logo */}
 
+      {/* Delivery */}
       <Box sx={{
         display: { xs: "none", lg: "flex" },
         gap: 4
@@ -95,9 +97,7 @@ function renderLogoSection() {
             Select Pincode <FaAngleDown />
           </Typography>
         </ButtonBase>
-      </Box>
-
-
+      </Box>{/* End Delivery */}
     </Box>
   );
 }
@@ -113,6 +113,8 @@ function renderActionGroup() {
         gap: { xs: 2, md: 4 },
       }}
     >
+
+      {/* Download App */}
       <Button
         color="secondary"
         disableElevation
@@ -121,8 +123,9 @@ function renderActionGroup() {
         variant="contained"
       >
         Download App
-      </Button>
+      </Button>{/* Download App */}
 
+      {/* Login Toggle */}
       <IconButton
         aria-label="offers"
         color="inherit"
@@ -142,8 +145,9 @@ function renderActionGroup() {
         >
           Hello, Log in
         </Typography>
-      </IconButton>
+      </IconButton>{/* End Login Toggle */}
 
+      {/* Offers */}
       <IconButton
         aria-label="offers"
         color="inherit"
@@ -162,8 +166,9 @@ function renderActionGroup() {
         >
           Offers
         </Typography>
-      </IconButton>
+      </IconButton>{/* End Offers */}
 
+      {/* Cart */}
       <IconButton
         aria-label="cart"
         color="inherit"
@@ -182,7 +187,9 @@ function renderActionGroup() {
         >
           Cart
         </Typography>
-      </IconButton>
+      </IconButton>{/* Cart */}
     </Box>
   );
 }
+
+export default Header;
