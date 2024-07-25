@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AppBar,
   Box,
@@ -6,6 +8,7 @@ import {
   Divider,
   IconButton,
   Link,
+  Paper,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -14,23 +17,42 @@ import { FaAngleDown, FaRegUser } from "react-icons/fa6";
 import { RiDiscountPercentLine } from "react-icons/ri";
 import { BsCart2 } from "react-icons/bs";
 import { FaMobileAlt } from "react-icons/fa";
+import useViewportWidth from "@/app/hooks/useViewportWidth";
 
 const Header = () => {
   return (
-    <AppBar
-      color="inherit"
-      component="header"
-      sx={{
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "row",
-        height: "64px",
-        padding: "0px 16px",
-      }}
-    >
-      {renderLogoSection()}
-      {renderActionGroup()}
-    </AppBar>
+    <Box>
+      <AppBar
+        color="inherit"
+        component="header"
+        elevation={3}
+        position="static"
+        sx={{
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "row",
+          height: "64px",
+          padding: "0px 16px",
+        }}
+      >
+        {renderLogoSection()}
+        {renderActionGroup()}
+      </AppBar>
+
+      {/* Delivery Mobile */}
+      <Paper
+        elevation={1}
+        sx={{
+          bgcolor: "transparent",
+          display: { xs: "flex", lg: "none" },
+          height: 32,
+          borderRadius: 0,
+        }}
+      >
+        {renderDelivery(true)}
+      </Paper>
+      {/* End Delivery Mobile */}
+    </Box>
   );
 };
 
@@ -46,7 +68,6 @@ function renderLogoSection() {
         marginRight: "auto",
       }}
     >
-
       {/* Login Toggle */}
       <IconButton
         aria-label="login"
@@ -55,7 +76,8 @@ function renderLogoSection() {
         sx={{ display: { lg: "none" } }}
       >
         <FaRegUser />
-      </IconButton>{/* End Login Toggle */}
+      </IconButton>
+      {/* End Login Toggle */}
 
       {/* Logo */}
       <Link aria-label="pharmeasy logo, go to home" href="/">
@@ -73,33 +95,18 @@ function renderLogoSection() {
           src="/images/pharmeasy-logos/logo_big.svg"
           width={150}
         />
-      </Link>{/* End Logo */}
+      </Link>
+      {/* End Logo */}
 
       {/* Delivery */}
-      <Box sx={{
-        display: { xs: "none", lg: "flex" },
-        gap: 4
-      }}>
-        <Divider flexItem orientation="vertical" variant="middle" />
-        <ButtonBase
-          aria-label="express delivery select pincode"
-          sx={{ display: "block" }}>
-          <span>⚡</span>
-          <Typography variant="caption">
-            Express delivery to
-          </Typography>
-          <Typography sx={{
-            alignItems: "center",
-            display: "flex",
-            fontWeight: 500,
-            gap: 1,
-          }}
-            variant="body2"
-          >
-            Select Pincode <FaAngleDown />
-          </Typography>
-        </ButtonBase>
-      </Box>{/* End Delivery */}
+      <Box
+        sx={{
+          display: { xs: "none", lg: "flex" },
+        }}
+      >
+        {renderDelivery(false)}
+      </Box>
+      {/* End Delivery */}
     </Box>
   );
 }
@@ -115,7 +122,6 @@ function renderActionGroup() {
         gap: { xs: 2, md: 4 },
       }}
     >
-
       {/* Download App */}
       <Button
         aria-label="download app"
@@ -126,7 +132,8 @@ function renderActionGroup() {
         variant="contained"
       >
         Download App
-      </Button>{/* End Download App */}
+      </Button>
+      {/* End Download App */}
 
       {/* Login Toggle */}
       <IconButton
@@ -148,7 +155,8 @@ function renderActionGroup() {
         >
           Hello, Log in
         </Typography>
-      </IconButton>{/* End Login Toggle */}
+      </IconButton>
+      {/* End Login Toggle */}
 
       {/* Offers */}
       <IconButton
@@ -169,7 +177,8 @@ function renderActionGroup() {
         >
           Offers
         </Typography>
-      </IconButton>{/* End Offers */}
+      </IconButton>
+      {/* End Offers */}
 
       {/* Cart */}
       <IconButton
@@ -190,7 +199,43 @@ function renderActionGroup() {
         >
           Cart
         </Typography>
-      </IconButton>{/* Cart */}
+      </IconButton>
+      {/* Cart */}
+    </Box>
+  );
+}
+
+function renderDelivery(row: boolean = true) {
+  const flexDirection = row ? "row" : "column";
+  const variant = row ? "caption" : "body2";
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        gap: 4,
+      }}
+    >
+      <Divider flexItem orientation="vertical" variant="middle" />
+      <ButtonBase
+        aria-label="express delivery select pincode"
+        sx={{ display: "flex", flexDirection }}
+      >
+        <Typography variant="caption">
+          <span>⚡ </span> Express delivery to
+        </Typography>
+        <Typography
+          sx={{
+            alignItems: "center",
+            display: "flex",
+            fontWeight: 600,
+            gap: 1,
+            ml: 0.5,
+          }}
+          variant={variant}
+        >
+          Select Pincode <FaAngleDown />
+        </Typography>
+      </ButtonBase>
     </Box>
   );
 }

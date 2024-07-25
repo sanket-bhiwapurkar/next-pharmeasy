@@ -1,11 +1,11 @@
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import theme from '../theme';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import theme from "../theme";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer/page";
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from "@mui/material/styles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,9 +24,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-          <Header />
-          {children}
-          <Footer />
+            <Header />
+            {children}
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
