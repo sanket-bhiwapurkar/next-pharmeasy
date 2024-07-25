@@ -1,33 +1,25 @@
 import {
   Button,
-  createTheme,
   IconButton,
   Link,
-  ThemeProvider,
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { FaRegUser } from "react-icons/fa6";
 import { RiDiscountPercentLine } from "react-icons/ri";
 import { BsCart2 } from "react-icons/bs";
-import { FaMobileAlt, FaPhone } from "react-icons/fa";
+import { FaMobileAlt } from "react-icons/fa";
 
 const Header = () => {
-  const theme = createTheme({
-    palette: {
-      secondary: {
-        main: "#eef4ff",
-      },
-    },
-  });
   return (
     <header className="flex items-center w-screen h-16 shadow-lg shadow-zinc-100 px-4">
       <div className="flex items-center me-auto">
         <IconButton
           aria-label="login-button"
           size="small"
-          className="me-5  lg:hidden"
+          className="me-5 lg:hidden"
           color="inherit"
+          sx={{display: {lg: "none"}, marginRight:"16px"}}
         >
           <FaRegUser />
         </IconButton>
@@ -51,22 +43,31 @@ const Header = () => {
       </div>
 
       <div className="flex gap-4 md:gap-8">
-        <ThemeProvider theme={theme}>
-          <Button
-            variant="contained"
-            startIcon={<FaMobileAlt />}
-            className="hidden lg:flex !normal-case"
-            disableElevation
-          >
-            Download
-          </Button>
-        </ThemeProvider>
+        <Button
+          variant="contained"
+          startIcon={<FaMobileAlt />}
+          disableElevation
+          color="secondary"
+          sx={{display: {xs: "none", lg: "flex"}, textTransform: "none"}}
+        >
+          Download App
+        </Button>
+
+        <Button
+          variant="text"
+          startIcon={<FaRegUser />}
+          disableElevation
+          color="inherit"
+          sx={{display: {xs: "none", xl: "flex"}, textTransform: "none"}}
+        >
+          Hello, Log in
+        </Button>
 
         <IconButton
           aria-label="login"
           size="small"
           color="inherit"
-          className="hidden lg:block"
+          sx={{display: {xs: "none", lg: "block"}}}
         >
           <FaRegUser />
         </IconButton>
