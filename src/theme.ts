@@ -1,6 +1,7 @@
 'use client';
-import { Roboto, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
+import { breakpoints } from './app/constants/viewport';
 
 const inter = Inter({
   weight: ['300', '400', '500', '700'],
@@ -14,14 +15,13 @@ const theme = createTheme({
   },
   breakpoints: {
     values: {
-      xs: 0,
-      sm: 576,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
+      ...breakpoints
     },
   },
   palette: {
+    text:{
+      primary:"#30363C",
+    },
     secondary: {
       main: "#eef4ff",
       contrastText: "#30363C",
@@ -37,6 +37,22 @@ const theme = createTheme({
         },
       },
     },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "transparent",
+          boxShadow: "none",
+          borderBottom: "1px solid #d7dfe5"
+        }
+      }
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          fontWeight: 600
+        }
+      }
+    }
   }
 });
 

@@ -1,4 +1,8 @@
 @tailwind base;
+
+* {
+    color: #30363C;
+}
+
 @tailwind components;
 @tailwind utilities;
-
