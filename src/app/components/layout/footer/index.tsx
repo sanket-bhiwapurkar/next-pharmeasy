@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, List, ListItem, Typography } from '@mui/material'
-import { palette } from "@/app/constants/styles";
+import { flex_123_1, flex_741_7, flexColumn, palette } from "@/app/constants/styles";
 import FooterAccordian from "./accordian";
 import { followUsData, footerNavData, mobileAppData, paymentMethodsData } from "./data";
 import Link from "next/link";
@@ -16,7 +16,7 @@ const Footer = () => {
       <Grid item lg={9} sx={{ display: { xs: "none", lg: "flex" } }}>
         <Box sx={{ display: "block", columnCount: 3, width: "100%" }}>
           {footerNavData.map(eachGroup =>
-            <List key={eachGroup.id} sx={{ breakInside: "avoid", gap: 1.5, p: 0, mb: 4, display: "flex", flexDirection: "column" }}>
+            <List key={eachGroup.id} sx={{ breakInside: "avoid", gap: 1.5, p: 0, mb: 4, ...flex_741_7 }}>
               <ListItem sx={{ p: 0, mb: 1.5 }}>
                 <Typography variant="body1" sx={{ fontWeight: 600 }} >{eachGroup.group}</Typography>
               </ListItem>
@@ -35,7 +35,7 @@ const Footer = () => {
 
       {/* App Download */}
       <Grid item xs={12} lg={3} sx={{ display: { xs: "flex", lg: "none" }, }}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+        <Box sx={{ ...flexColumn, gap: 3 }}>
           <Typography sx={{ fontWeight: 600 }}>Download the App for Free</Typography>
           <Box sx={{ display: "flex", gap: 2 }}>
             {mobileAppData.map(eachData => <Link href={eachData.linkUrl} key={eachData.id}>
@@ -54,7 +54,7 @@ const Footer = () => {
 
       {/* Social */}
       <Grid item xs={12} lg={3}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+        <Box sx={{ ...flexColumn, gap: 3 }}>
           <Typography sx={{ fontWeight: 600 }}>Follow us on</Typography>
           <Box sx={{ display: "flex", gap: 2 }}>
             {followUsData.map(eachData => <Link href={eachData.linkUrl} key={eachData.id}>
@@ -72,7 +72,7 @@ const Footer = () => {
 
       {/* Payment */}
       <Grid item xs={12} lg={9}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+        <Box sx={{ ...flexColumn, gap: 3 }}>
           <Typography sx={{ fontWeight: 600 }}>Our Payment Partners</Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
             {paymentMethodsData.map(eachData =>
@@ -91,7 +91,7 @@ const Footer = () => {
       {/* End Payment */}
 
       {/* Copyright */}
-      <Grid item xs={12} lg={3} sx={{ display: "flex", alignItems: "end" }}>
+      <Grid item xs={12} lg={3} sx={{ ...flex_123_1 }}>
         <Typography variant="caption" sx={{ justifySelf: "end" }}>© 2024 PharmEasy. All Rights Reserved</Typography>
       </Grid>
       {/* End Copyright */}

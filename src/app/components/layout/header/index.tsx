@@ -17,7 +17,7 @@ import { FaAngleDown, FaRegUser } from "react-icons/fa6";
 import { RiDiscountPercentLine } from "react-icons/ri";
 import { BsCart2 } from "react-icons/bs";
 import { FaMobileAlt } from "react-icons/fa";
-import useViewportWidth from "@/app/hooks/useViewportWidth";
+import { flex_456_4 } from "@/app/constants/styles";
 
 const Header = () => {
   return (
@@ -28,9 +28,7 @@ const Header = () => {
         elevation={3}
         position="static"
         sx={{
-          alignItems: "center",
-          display: "flex",
-          flexDirection: "row",
+          ...flex_456_4,
           height: "64px",
           padding: "0px 16px",
         }}
@@ -61,9 +59,7 @@ function renderLogoSection() {
     <Box
       component="div"
       sx={{
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "row",
+        ...flex_456_4,
         gap: { xs: 2, lg: 4 },
         marginRight: "auto",
       }}
@@ -116,9 +112,7 @@ function renderActionGroup() {
     <Box
       component="div"
       sx={{
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "row",
+        ...flex_456_4,
         gap: { xs: 2, md: 4 },
       }}
     >
@@ -225,8 +219,7 @@ function renderDelivery(row: boolean = true) {
         </Typography>
         <Typography
           sx={{
-            alignItems: "center",
-            display: "flex",
+            ...flex_456_4,
             fontWeight: 600,
             gap: 1,
             ml: 0.5,
