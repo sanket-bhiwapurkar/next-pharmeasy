@@ -16,4 +16,4 @@
 - `[ ]` Homepage - Health Articles
 - `[ ]` Homepage - Why choose us
 - `[ ]` Homepage - Review
-- `[ ]` Homepage - Meta tags and texts
+- `[X]` Homepage - Meta tags and texts
