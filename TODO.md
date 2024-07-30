@@ -1,0 +1,19 @@
+- `[ ]` Homepage - Search
+- `[ ]` Homepage - offerings
+- `[ ]` Homepage - Banner
+- `[ ]` Homepage - Lab tests by health
+- `[ ]` Homepage - Order with prescription
+- `[ ]` Homepage - Shop by categories
+- `[ ]` Homepage - New launches
+- `[ ]` Homepage - Trending near you
+- `[ ]` Homepage - Ad
+- `[ ]` Homepage - Frequently booked lab tests
+- `[ ]` Homepage - Wellness essentials of the week
+- `[ ]` Homepage - Featured brands
+- `[ ]` Homepage - Deals of the day
+- `[ ]` Homepage - In the Spotlight
+- `[ ]` Homepage - Banner
+- `[ ]` Homepage - Health Articles
+- `[ ]` Homepage - Why choose us
+- `[ ]` Homepage - Review
+- `[ ]` Homepage - Meta tags and texts
