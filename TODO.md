@@ -1,3 +1,5 @@
+## 1
+
 - `[ ]` Homepage - Search
 - `[ ]` Homepage - offerings
 - `[ ]` Homepage - Banner
@@ -16,48 +18,68 @@
 - `[ ]` Homepage - Health Articles
 - `[ ]` Homepage - Why choose us
 - `[ ]` Homepage - Review
-- `[X]` Homepage - Meta tags and texts
+- `[ ]` Homepage - Meta tags and texts
+
+## Header links
+
+## 2
 
 - `[ ]` Offers - Heading section
 - `[ ]` Offers - coupons
 - `[ ]` Offers - faqs
 
-- `[X]` Medicine - Order Medicines
-- `[X]` Medicine - All offers
-- `[X]` Medicine - banner
-- `[X]` Medicine - review
-- `[X]` Medicine - text section
-- `[X]` Medicine - faqs section
+## 3
 
-- `[X]` Healthcare - Banner
-- `[X]` Healthcare - Cards
-- `[X]` Healthcare - text
+- `[ ]` Medicine - Order Medicines
+- `[ ]` Medicine - All offers
+- `[ ]` Medicine - banner
+- `[ ]` Medicine - review
+- `[ ]` Medicine - text section
+- `[ ]` Medicine - faqs section
 
-- `[X]` Lab Tests - Banner
-- `[X]` Lab Tests - Tab and ad
-- `[X]` Lab Tests - frequently booked
-- `[X]` Lab Tests - Certified Partners
-- `[X]` Lab Tests - Affordable packages
-- `[X]` Lab Tests - text
-- `[X]` Lab Tests - faqs
-- `[X]` Lab Tests - review
-- `[X]` Lab Tests - infographics
-- `[X]` Lab Tests - mobile app
+## 4
 
-- `[X]` Health Articles - Banner
-- `[X]` Health Articles - Trending
-- `[X]` Health Articles - Categories
-- `[X]` Health Articles - latest/pagination
-- `[X]` Health Articles - Featured
+- `[ ]` Healthcare - Banner
+- `[ ]` Healthcare - Cards
+- `[ ]` Healthcare - text
 
-- `[X]` PLUS - Heading
-- `[X]` PLUS - Plan
-- `[X]` PLUS - review
-- `[X]` PLUS - faqs
+## 5
 
-- `[X]` Value Store - filters
-- `[X]` Value Store - products/autopagination
-- `[X]` Value Store - value store products
+- `[ ]` Lab Tests - Banner
+- `[ ]` Lab Tests - Tab and ad
+- `[ ]` Lab Tests - frequently booked
+- `[ ]` Lab Tests - Certified Partners
+- `[ ]` Lab Tests - Affordable packages
+- `[ ]` Lab Tests - text
+- `[ ]` Lab Tests - faqs
+- `[ ]` Lab Tests - review
+- `[ ]` Lab Tests - infographics
+- `[ ]` Lab Tests - mobile app
+
+## 6
+
+- `[ ]` Health Blogs - Banner
+- `[ ]` Health Blogs - Trending
+- `[ ]` Health Blogs - Categories
+- `[ ]` Health Blogs - latest/pagination
+- `[ ]` Health Blogs - Featured
+
+## 7
+
+- `[ ]` PLUS - Heading
+- `[ ]` PLUS - Plan
+- `[ ]` PLUS - review
+- `[ ]` PLUS - faqs
+
+## 8
+
+- `[ ]` Value Store - filters
+- `[ ]` Value Store - products/autopagination
+- `[ ]` Value Store - value store products
+
+## Footer Links
+
+## 9
 
 - `[ ]` About - Heading Section
 - `[ ]` About - Accordian
@@ -72,3 +94,47 @@
 - `[ ]` About - Contact
 - `[ ]` About - infirmatics
 - `[ ]` About - mobile app
+
+## 10
+
+- `[ ]` Career -
+
+## 11
+
+- `[ ]` Partner with PharmEasy -
+
+## 12
+
+- `[ ]` Sell at pharmeasy -
+
+## 13
+
+- `[ ]` Find nearest collection center -
+
+## 14
+
+- `[ ]` Browse All Stores -
+
+## 15
+
+- `[ ]` Browse All Medicines -
+
+## 16
+
+- `[ ]` Browse All Molecules -
+
+## 17
+
+- `[ ]` Browse All Cities -
+
+## 18
+
+- `[ ]` Browse All Areas -
+
+## 19
+
+- `[ ]` FAQs -
+
+## 20
+
+- `[ ]` editorial policy -
