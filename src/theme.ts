@@ -9,6 +9,16 @@ const inter = Inter({
   display: 'swap',
 });
 
+// Extend the PaletteOptions to include the 'dark' color
+declare module '@mui/material/styles/createPalette' {
+  interface Palette {
+    dark: PaletteColor;
+  }
+  interface PaletteOptions {
+    dark?: PaletteOptions['primary'];
+  }
+}
+
 const theme = createTheme({
   typography: {
     fontFamily: inter.style.fontFamily,
@@ -22,11 +32,15 @@ const theme = createTheme({
     text:{
       primary:"#30363C",
     },
+    dark: {
+      main: '#333', // Custom dark color
+      contrastText: '#fff', // Contrast text color
+    },
     secondary: {
       main: "#eef4ff",
       contrastText: "#30363C",
       dark: '#dce4f1',
-    }
+    },
   },
   components: {
     MuiButton: {
@@ -52,7 +66,20 @@ const theme = createTheme({
           fontWeight: 600
         }
       }
-    }
+    },
+    MuiFab: {
+      styleOverrides: {
+        root: {
+          '&.MuiFab-colorDark': {
+            backgroundColor: '#333', // Dark color
+            color: '#fff', // Contrast text color
+            '&:hover': {
+              backgroundColor: '#555', // Darker shade on hover
+            },
+          },
+        },
+      },
+    },
   }
 });
 
