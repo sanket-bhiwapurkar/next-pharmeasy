@@ -4,6 +4,38 @@ export const palette = {
     dark: "#30363C",
 }
 
+export const TypographyScale = {
+    h1: 'text-8xl',
+    h2: 'text-6xl',
+    h3: 'text-5xl',
+    h4: 'text-lg',
+    h5: 'text-2xl',
+    h6: 'text-xl',
+    subtitle1: "text-base leading-7",
+    subtitle2: "text-sm leading-6 font-semibold",
+    body1: "text-base leading-1",
+    body2: "text-sm",
+    button: "text-sm font-semibold",
+    caption: "text-xs leading-6",
+    overline: "text-sm leading-10",
+}
+
+export const iconSize = {
+    xs: 'text-sm',
+    small: "text-base",
+    medium: 'text-xl',
+    large: "text-2xl"
+}
+
+export const elevations = {
+    0: "shadow-none",
+    1: "shadow-sm",
+    2: "shadow-md",
+    3: "shadow-lg",
+    4: "shadow-xl",
+    5: "shadow-2xl"
+}
+
 // Flex Box
 
 export const flexRow = {
