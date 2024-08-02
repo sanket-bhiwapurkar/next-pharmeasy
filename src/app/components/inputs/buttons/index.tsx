@@ -1,9 +1,9 @@
-'use client'
+"use client";
 import { elevations, TypographyScale } from "@/app/constants/styles";
 import React, { forwardRef, MouseEvent, useRef, useState } from "react";
 
 interface ButtonBaseProps {
-  ref?: React.RefObject<HTMLButtonElement> | null;
+  ref?: React.RefObject<HTMLButtonElement>;
   onClick?: any;
   children: React.ReactNode;
   className?: string;
@@ -11,40 +11,39 @@ interface ButtonBaseProps {
   type?: "button" | "submit" | "reset";
 }
 
-export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(({
-  onClick,
-  children,
-  className,
-  disabled = false,
-  type = "button",
-}, ref) => {
-  return (
-    <button
-      ref={ref}
-      type={type}
-      onClick={onClick}
-      className={`${className}`}
-      disabled={disabled}
-    >
-      {children}
-    </button>
-  );
-});
+export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
+  (
+    { onClick, children, className, disabled = false, type = "button" },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        type={type}
+        onClick={onClick}
+        className={`${className}`}
+        disabled={disabled}
+      >
+        {children}
+      </button>
+    );
+  }
+);
 
-ButtonBase.displayName = 'ButtonBase'
+ButtonBase.displayName = "ButtonBase";
 
 interface ButtonProps extends ButtonBaseProps {
   color?:
-  | "inherit"
-  | "primary"
-  | "secondary"
-  | "success"
-  | "info"
-  | "warning"
-  | "dark"
-  | "danger"
-  | "disabled"
-  | string;
+    | "inherit"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "info"
+    | "warning"
+    | "dark"
+    | "danger"
+    | "disabled"
+    | string;
   variant?: "contained" | "outlined" | "text" | "flipped";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
@@ -64,16 +63,17 @@ const colors: { [key: string]: { [key: string]: string } } = {
   primary: {
     inherit: "",
     contained: "border-0 bg-primary hover:bg-teal-700 text-white",
-    outlined: "border border-primary bg-transparent hover:bg-teal-50 text-primary",
+    outlined:
+      "border border-primary bg-transparent hover:bg-teal-50 text-primary",
     text: "border-0 bg-transparent hover:bg-teal-50 text-primary",
-    ripple: "bg-teal-50"
+    ripple: "bg-teal-50",
   },
   secondary: {
     inherit: "",
     contained: "border-0 bg-secondary hover:bg-blue-100 text-dark",
     outlined: "border border-dark hover:bg-secondary text-dark",
     text: "border-0 bg-transparent hover:bg-secondary text-dark",
-    ripple: "bg-secondary"
+    ripple: "bg-secondary",
   },
   dark: {
     inherit: "",
@@ -119,50 +119,82 @@ interface rippleStates {
   y: number;
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
-  children,
-  color = "primary",
-  variant = "contained",
-  size = "medium",
-  elevation = 0,
-  fab = false,
-  ...rest
-}, ref) => {
-  const [ripple, setRipple] = useState<rippleStates>({ show: false, x: 0, y: 0 })
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const rippleEffect = (e: MouseEvent<HTMLButtonElement>) => {
-    const rect = buttonRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setRipple({ show: true, x, y })
-    console.log({ x, y })
-    setTimeout(() => setRipple({ show: false, x: 0, y: 0 }), 500)
-  }
-  return (
-    <ButtonBase
-      ref={(node) => {
-        // Set the ref for ButtonBase and also update local buttonRef
-        if (typeof ref === 'function') {
-          ref(node); // Handle ref if it's a function
-        } else if (ref) {
-          (ref as React.RefObject<HTMLButtonElement>).current = node; // Handle ref if it's an object
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      color = "primary",
+      variant = "contained",
+      size = "medium",
+      elevation = 0,
+      fab = false,
+      onClick,
+      ...rest
+    },
+    ref
+  ) => {
+    const [ripple, setRipple] = useState<rippleStates>({
+      show: false,
+      x: 0,
+      y: 0,
+    });
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
+    const rippleEffect = (e: MouseEvent<HTMLButtonElement>) => {
+      const rect = buttonRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      setRipple({ show: true, x, y });
+      setTimeout(() => setRipple({ show: false, x: 0, y: 0 }), 500);
+    };
+    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+      rippleEffect(e);
+      // Call the passed onClick handler if it exists
+      setTimeout(() => {
+        if (onClick) {
+          onClick(e); // Call the passed onClick handler
         }
-        buttonRef.current = node; // Update local buttonRef
-      }}
-      onClick={(e: MouseEvent<HTMLButtonElement>) => rippleEffect(e)}
-      {...rest}
-      className={`flex items-center justify-center gap-2 relative overflow-hidden ${fab ? 'rounded-full' : 'rounded'} shadow-gray-600 font-medium text-nowrap ${TypographyScale.button} ${colors[color][variant]} ${sizes[size]} ${elevations[elevation]} ${rest.className}`}
-    >
-      {rest.startIcon}
-      {children}
-      {rest.endIcon}
-      {ripple.show && <span className={`ripple ${colors[color]['ripple']}`} style={{ left: ripple.x, top: ripple.y }}></span>}
-    </ButtonBase >
-  );
-});
-Button.displayName = 'Button';
+      }, 0);
+    };
+    return (
+      <ButtonBase
+        ref={(node: HTMLButtonElement | null) => {
+          // Set the ref for ButtonBase and also update local buttonRef
+          if (typeof ref === "function") {
+            ref(node); // Handle ref if it's a function
+          } else if (ref && "current" in ref) {
+            ref.current = node; // Handle ref if it's an object
+          }
+          buttonRef.current = node; // Update local buttonRef
+        }}
+        onClick={handleClick}
+        {...rest}
+        className={`flex items-center justify-center gap-2 relative overflow-hidden ${
+          fab ? "rounded-full" : "rounded"
+        } shadow-gray-600 font-medium text-nowrap ${TypographyScale.button} ${
+          colors[color][variant]
+        } ${sizes[size]} ${elevations[elevation]} ${rest.className}`}
+      >
+        {rest.startIcon}
+        {children}
+        {rest.endIcon}
+        {ripple.show && (
+          <span
+            className={`ripple`}
+            style={{
+              left: ripple.x - 10,
+              top: ripple.y - 10,
+              width: "20px",
+              height: "20px",
+            }}
+          ></span>
+        )}
+      </ButtonBase>
+    );
+  }
+);
+Button.displayName = "Button";
 
 interface IconButtonProps extends ButtonProps {
   startIcon?: null;
