@@ -17,6 +17,10 @@ const config: Config = {
         primary: "#10847e",
         secondary: "#eef4ff",
         dark: "#30363C",
+        danger: "#f76b6d",
+        disabled: "#949494",
+        info: "#8573e1", //violet
+        warning: "#fc8019",
       }
     },
   },

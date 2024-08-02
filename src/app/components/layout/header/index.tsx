@@ -6,7 +6,7 @@ import { FaAngleDown, FaRegUser } from "react-icons/fa6";
 import { RiDiscountPercentLine } from "react-icons/ri";
 import { BsCart2 } from "react-icons/bs";
 import { FaMobileAlt } from "react-icons/fa";
-import { flex_456_4, iconSize, TypographyScale } from "@/app/constants/styles";
+import { iconSize, TypographyScale } from "@/app/constants/styles";
 import { Button, IconButton, ButtonBase } from "../../inputs/buttons";
 import Link from "next/link";
 import Divider from "../../data-display/divider";
@@ -44,14 +44,14 @@ function renderLogoSection() {
           alt="logo"
           className="lg:hidden"
           height={0}
-          src="/images/pharmeasy-logos/logo-wo-slogan.svg"
+          src="/images/pharmeasy-logos/logo-wo-slogan.svg "
           width={106}
         />
         <Image
           alt="logo"
           className="hidden lg:block"
           height={0}
-          src="/images/pharmeasy-logos/logo_big.svg"
+          src="/images/pharmeasy-logos/logo_big.svg "
           width={150}
         />
       </Link>

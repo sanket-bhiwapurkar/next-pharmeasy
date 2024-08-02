@@ -1,24 +1,26 @@
+'use client'
 import { elevations, TypographyScale } from "@/app/constants/styles";
-import React from "react";
-import { inherits } from "util";
+import React, { forwardRef, MouseEvent, useRef, useState } from "react";
 
 interface ButtonBaseProps {
-  onClick?: () => void;
+  ref?: React.RefObject<HTMLButtonElement> | null;
+  onClick?: any;
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
 }
 
-export const ButtonBase: React.FC<ButtonBaseProps> = ({
+export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(({
   onClick,
   children,
   className,
   disabled = false,
   type = "button",
-}) => {
+}, ref) => {
   return (
     <button
+      ref={ref}
       type={type}
       onClick={onClick}
       className={`${className}`}
@@ -27,24 +29,28 @@ export const ButtonBase: React.FC<ButtonBaseProps> = ({
       {children}
     </button>
   );
-};
+});
+
+ButtonBase.displayName = 'ButtonBase'
 
 interface ButtonProps extends ButtonBaseProps {
   color?:
-    | "inherit"
-    | "primary"
-    | "secondary"
-    | "success"
-    | "error"
-    | "info"
-    | "warning"
-    | "dark"
-    | string;
-  variant?: "contained" | "outlined" | "text" | string;
+  | "inherit"
+  | "primary"
+  | "secondary"
+  | "success"
+  | "info"
+  | "warning"
+  | "dark"
+  | "danger"
+  | "disabled"
+  | string;
+  variant?: "contained" | "outlined" | "text" | "flipped";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   size?: "small" | "meduim" | "large";
   elevation?: 0 | 1 | 2 | 3 | 4 | 5;
+  fab?: boolean;
 }
 
 const colors: { [key: string]: { [key: string]: string } } = {
@@ -53,24 +59,51 @@ const colors: { [key: string]: { [key: string]: string } } = {
     contained: "",
     outlined: "",
     text: "",
+    ripple: "",
   },
   primary: {
     inherit: "",
-    contained: "border-0 bg-primary text-white",
-    outlined: "border border-primary bg-transparent text-primary",
-    text: "border-0 bg-transparent text-primary",
+    contained: "border-0 bg-primary hover:bg-teal-700 text-white",
+    outlined: "border border-primary bg-transparent hover:bg-teal-50 text-primary",
+    text: "border-0 bg-transparent hover:bg-teal-50 text-primary",
+    ripple: "bg-teal-50"
   },
   secondary: {
     inherit: "",
-    contained: "border-0 bg-secondary text-dark",
-    outlined: "border border-dark bg-secondary text-dark",
-    text: "border-0 bg-transparent text-secondary",
+    contained: "border-0 bg-secondary hover:bg-blue-100 text-dark",
+    outlined: "border border-dark hover:bg-secondary text-dark",
+    text: "border-0 bg-transparent hover:bg-secondary text-dark",
+    ripple: "bg-secondary"
   },
   dark: {
     inherit: "",
-    contained: "border-0 bg-dark text-white",
-    outlined: "border border-dark bg-transparent text-dark",
-    text: "border-0 bg-transparent text-dark",
+    contained: "border-0 bg-dark hover:bg-black text-white",
+    outlined: "border border-dark hover:bg-gray-100 text-dark",
+    text: "border-0 bg-transparent hover:bg-gray-100 text-dark",
+  },
+  danger: {
+    inherit: "",
+    contained: "border-0 bg-danger hover:bg-red-500 text-white",
+    outlined: "border border-danger hover:bg-red-50 text-danger",
+    text: "border-0 bg-transparent hover:bg-red-50 text-danger",
+  },
+  disabled: {
+    inherit: "",
+    contained: "border-0 bg-disabled text-white cursor-not-allowed",
+    outlined: "border border-disabled  text-disabled cursor-not-allowed",
+    text: "border-0 bg-transparent text-disabled cursor-not-allowed",
+  },
+  info: {
+    inherit: "",
+    contained: "border-0 bg-info hover:bg-violet-600 text-white",
+    outlined: "border border-info hover:bg-violet-50 text-info",
+    text: "border-0 bg-transparent hover:bg-violet-50 text-info",
+  },
+  warning: {
+    inherit: "",
+    contained: "border-0 bg-warning hover:bg-orange-600 text-white",
+    outlined: "border border-warning hover:bg-orange-50 text-warning",
+    text: "border-0 bg-transparent hover:bg-orange-50 text-warning",
   },
 };
 
@@ -80,25 +113,56 @@ const sizes: { [key: string]: string } = {
   large: "min-w-11 min-h-11 py-2 px-6",
 };
 
-export const Button: React.FC<ButtonProps> = ({
+interface rippleStates {
+  show: boolean;
+  x: number;
+  y: number;
+}
+
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   color = "primary",
   variant = "contained",
   size = "medium",
   elevation = 0,
+  fab = false,
   ...rest
-}) => {
+}, ref) => {
+  const [ripple, setRipple] = useState<rippleStates>({ show: false, x: 0, y: 0 })
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const rippleEffect = (e: MouseEvent<HTMLButtonElement>) => {
+    const rect = buttonRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setRipple({ show: true, x, y })
+    console.log({ x, y })
+    setTimeout(() => setRipple({ show: false, x: 0, y: 0 }), 500)
+  }
   return (
     <ButtonBase
+      ref={(node) => {
+        // Set the ref for ButtonBase and also update local buttonRef
+        if (typeof ref === 'function') {
+          ref(node); // Handle ref if it's a function
+        } else if (ref) {
+          (ref as React.RefObject<HTMLButtonElement>).current = node; // Handle ref if it's an object
+        }
+        buttonRef.current = node; // Update local buttonRef
+      }}
+      onClick={(e: MouseEvent<HTMLButtonElement>) => rippleEffect(e)}
       {...rest}
-      className={`flex items-center justify-center gap-2 rounded shadow-gray-600 font-medium text-nowrap ${TypographyScale.button} ${colors[color][variant]} ${sizes[size]} ${elevations[elevation]} ${rest.className}`}
+      className={`flex items-center justify-center gap-2 relative overflow-hidden ${fab ? 'rounded-full' : 'rounded'} shadow-gray-600 font-medium text-nowrap ${TypographyScale.button} ${colors[color][variant]} ${sizes[size]} ${elevations[elevation]} ${rest.className}`}
     >
       {rest.startIcon}
       {children}
       {rest.endIcon}
-    </ButtonBase>
+      {ripple.show && <span className={`ripple ${colors[color]['ripple']}`} style={{ left: ripple.x, top: ripple.y }}></span>}
+    </ButtonBase >
   );
-};
+});
+Button.displayName = 'Button';
 
 interface IconButtonProps extends ButtonProps {
   startIcon?: null;
@@ -111,9 +175,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
 }) => {
   return (
     <Button
-      {...rest}
       color="dark"
       variant="text"
+      {...rest}
       className={`${rest.className} rounded-full !p-0`}
     >
       {children}
