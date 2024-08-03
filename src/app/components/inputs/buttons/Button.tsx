@@ -1,38 +1,8 @@
-"use client";
-import { elevations, TypographyScale } from "@/app/constants/styles";
-import React, { forwardRef, MouseEvent, useRef, useState } from "react";
+import { forwardRef, MouseEvent, useRef, useState } from "react";
+import { ButtonBase, ButtonBaseProps } from "./ButtonBase";
+import { elevations } from "@/app/constants/styles";
 
-interface ButtonBaseProps {
-  ref?: React.RefObject<HTMLButtonElement>;
-  onClick?: any;
-  children: React.ReactNode;
-  className?: string;
-  disabled?: boolean;
-  type?: "button" | "submit" | "reset";
-}
-
-export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
-  (
-    { onClick, children, className, disabled = false, type = "button" },
-    ref
-  ) => {
-    return (
-      <button
-        ref={ref}
-        type={type}
-        onClick={onClick}
-        className={`${className}`}
-        disabled={disabled}
-      >
-        {children}
-      </button>
-    );
-  }
-);
-
-ButtonBase.displayName = "ButtonBase";
-
-interface ButtonProps extends ButtonBaseProps {
+export interface ButtonProps extends ButtonBaseProps {
   color?:
     | "inherit"
     | "primary"
@@ -47,9 +17,10 @@ interface ButtonProps extends ButtonBaseProps {
   variant?: "contained" | "outlined" | "text" | "flipped";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  size?: "small" | "meduim" | "large";
+  size?: "small" | "medium" | "large";
   elevation?: 0 | 1 | 2 | 3 | 4 | 5;
   fab?: boolean;
+  disableRipple?: boolean;
 }
 
 const colors: { [key: string]: { [key: string]: string } } = {
@@ -108,9 +79,9 @@ const colors: { [key: string]: { [key: string]: string } } = {
 };
 
 const sizes: { [key: string]: string } = {
-  small: "min-w-7 min-h-7 py-1 px-2",
-  medium: "min-w-9 min-h-9 py-1 px-4",
-  large: "min-w-11 min-h-11 py-2 px-6",
+  small: "min-w-7 min-h-7 py-1 px-2 text-sm",
+  medium: "min-w-9 min-h-9 py-1 px-4 text-base",
+  large: "min-w-11 min-h-11 py-2 px-6 text-lg",
 };
 
 interface rippleStates {
@@ -129,6 +100,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       elevation = 0,
       fab = false,
       onClick,
+      disableRipple = false,
       ...rest
     },
     ref
@@ -170,16 +142,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         }}
         onClick={handleClick}
         {...rest}
-        className={`flex items-center justify-center gap-2 relative overflow-hidden ${
+        className={`flex items-center justify-between gap-2 relative overflow-hidden ${
           fab ? "rounded-full" : "rounded"
-        } shadow-gray-600 font-medium text-nowrap ${TypographyScale.button} ${
-          colors[color][variant]
-        } ${sizes[size]} ${elevations[elevation]} ${rest.className}`}
+        } shadow-gray-600 font-medium text-nowrap ${colors[color][variant]} ${
+          sizes[size]
+        } ${elevations[elevation]} ${rest.className}`}
       >
-        {rest.startIcon}
+        {rest.startIcon && rest.startIcon}
         {children}
-        {rest.endIcon}
-        {ripple.show && (
+        {rest.endIcon && rest.endIcon}
+        {ripple.show && !disableRipple && (
           <span
             className={`ripple`}
             style={{
@@ -195,24 +167,3 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 Button.displayName = "Button";
-
-interface IconButtonProps extends ButtonProps {
-  startIcon?: null;
-  endIcon?: null;
-}
-
-export const IconButton: React.FC<IconButtonProps> = ({
-  children,
-  ...rest
-}) => {
-  return (
-    <Button
-      color="dark"
-      variant="text"
-      {...rest}
-      className={`${rest.className} rounded-full !p-0`}
-    >
-      {children}
-    </Button>
-  );
-};

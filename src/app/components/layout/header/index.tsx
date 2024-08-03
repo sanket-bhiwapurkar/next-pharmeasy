@@ -7,9 +7,11 @@ import { RiDiscountPercentLine } from "react-icons/ri";
 import { BsCart2 } from "react-icons/bs";
 import { FaMobileAlt } from "react-icons/fa";
 import { iconSize, TypographyScale } from "@/app/constants/styles";
-import { Button, IconButton, ButtonBase } from "../../inputs/buttons";
 import Link from "next/link";
 import Divider from "../../data-display/divider";
+import { IconButton } from "../../inputs/buttons/IconButton";
+import { Button } from "../../inputs/buttons/Button";
+import { ButtonBase } from "../../inputs/buttons/ButtonBase";
 
 const classes = {
   hoverDashedUnderline: "border-black border-dashed hover:border-b",

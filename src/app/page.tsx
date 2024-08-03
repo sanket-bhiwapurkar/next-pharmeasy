@@ -1,92 +1,36 @@
 "use client";
 
-import { FaPhone } from "react-icons/fa6";
 import ClickToScroll from "./components/clickToScroll";
-import { Button, IconButton } from "./components/inputs/buttons";
 import MetaSection from "./components/metaSection";
+import Accordian from "./components/surfaces/Accordian";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <h1>Home</h1>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => alert("action")}
-      >
-        PrimaryPrimaryPrimaryPrimaryPrimaryPrimary
-      </Button>
-      <Button variant="text" color="primary">
-        Primary
-      </Button>
-      <Button variant="outlined" color="primary">
-        Primary
-      </Button>
-
-      <Button variant="contained" color="secondary">
-        secondary
-      </Button>
-      <Button variant="text" color="secondary">
-        secondary
-      </Button>
-      <Button variant="outlined" color="secondary">
-        secondary
-      </Button>
-
-      <Button variant="contained" color="dark">
-        dark
-      </Button>
-      <Button variant="text" color="dark">
-        dark
-      </Button>
-      <Button variant="outlined" color="dark">
-        dark
-      </Button>
-
-      <Button variant="contained" color="danger">
-        danger
-      </Button>
-      <Button variant="text" color="danger">
-        danger
-      </Button>
-      <Button variant="outlined" color="danger">
-        danger
-      </Button>
-
-      <Button variant="contained" color="disabled" disabled>
-        disabled
-      </Button>
-      <Button variant="text" color="disabled" disabled>
-        disabled
-      </Button>
-      <Button variant="outlined" color="disabled" disabled>
-        disabled
-      </Button>
-
-      <Button variant="contained" color="info">
-        info
-      </Button>
-      <Button variant="text" color="info">
-        info
-      </Button>
-      <Button variant="outlined" color="info">
-        info
-      </Button>
-
-      <Button variant="contained" color="warning" fab>
-        warning
-      </Button>
-      <Button variant="text" color="warning">
-        warning
-      </Button>
-      <Button variant="outlined" color="warning" fab>
-        warning
-      </Button>
-
-      <IconButton>
-        <FaPhone />
-      </IconButton>
-
+      <Accordian size="large" variant="outlined" color="primary">
+        <Accordian.Header>
+          <p className="text-dark">Header of</p>
+        </Accordian.Header>
+        <Accordian.Body>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+            fuga? Placeat illo quo molestias blanditiis voluptatibus. Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, non
+            laborum porro tempore, vitae tenetur dolorem commodi fugiat ut
+            itaque libero at in quidem assumenda expedita voluptates laboriosam
+            magnam iure architecto et, laudantium consequatur! Quisquam
+            voluptates aliquam nobis fugit commodi suscipit, repudiandae fuga
+            recusandae distinctio ea magni possimus tenetur corrupti? Tempore
+            rem aut accusantium ab alias quam iste excepturi repellat illo?
+            Quisquam labore impedit ipsam aliquid. Sit maiores voluptates, sequi
+            quod pariatur ad. Est magni optio nam nobis veritatis corporis
+            expedita quis magnam sequi, asperiores molestias facilis quibusdam
+            saepe beatae sunt nulla, ad, obcaecati voluptate ullam porro alias.
+            Fuga, eius.
+          </p>
+        </Accordian.Body>
+      </Accordian>
       <ClickToScroll />
       <MetaSection />
     </main>
