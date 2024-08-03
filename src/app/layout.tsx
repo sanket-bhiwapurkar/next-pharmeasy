@@ -25,8 +25,10 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Header />
-            {children}
-            <Footer />
+            <div className="container mx-auto">
+              {children}
+              <Footer className="mt-16" />
+            </div>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

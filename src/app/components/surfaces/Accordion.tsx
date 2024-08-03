@@ -7,9 +7,13 @@ const theme: { [key: string]: { [key: string]: string } } = {
     outlined: "rounded-md border border-primary",
     underlined: "border-b border-primary",
   },
+  secondary: {
+    outlined: "rounded-md border border-gray-300",
+    underlined: "border-b border-gray-300",
+  },
   dark: {
-    outlined: "rounded-md border border-gray-200",
-    underlined: "border-b border-gray-200",
+    outlined: "rounded-md border border-gray-300",
+    underlined: "border-b border-gray-300",
   },
   info: {
     outlined: "rounded-md border border-info",
@@ -24,10 +28,10 @@ const bodypx: { [key: string]: string } = {
 };
 
 const Header = ({ children }: any) => {
-  const { toggleActive, isActive, size, color } = useContext(AccordianContext);
+  const { toggleActive, isActive, size, color } = useContext(AccordionContext);
   return (
     <Button
-      className="w-100"
+      className="w-100 font-semibold"
       variant="text"
       endIcon={
         <FaAngleDown
@@ -46,51 +50,51 @@ const Header = ({ children }: any) => {
   );
 };
 const Body = ({ children }: any) => {
-  const { isActive, size } = useContext(AccordianContext);
+  const { isActive, size } = useContext(AccordionContext);
   return isActive ? (
     <div className={`${bodypx[size]} py-2`}>{children}</div>
   ) : null;
 };
 
-interface AccordianContextProps {
+interface AccordionContextProps {
   isActive: boolean;
   toggleActive: () => void;
   size: string;
   color: string;
 }
 
-const AccordianContext = createContext<AccordianContextProps | undefined>(
+const AccordionContext = createContext<AccordionContextProps | undefined>(
   undefined
 );
 
-interface AccordianProps {
+interface AccordionProps {
   children: React.ReactNode;
   active?: boolean;
   size?: string;
   variant?: string;
-  color?: "primary" | "dark" | "info";
+  color?: "primary" | "secondary" | "dark" | "info";
 }
 
-const Accordian = ({
+const Accordion = ({
   active = false,
   children,
   size = "medium",
   variant = "outlined",
   color = "dark",
   ...rest
-}: AccordianProps) => {
+}: AccordionProps) => {
   const [isActive, setIsActive] = useState(active);
   const toggleActive = () => setIsActive((prev) => !prev);
   return (
-    <AccordianContext.Provider value={{ isActive, toggleActive, size, color }}>
+    <AccordionContext.Provider value={{ isActive, toggleActive, size, color }}>
       <div className={`flex flex-col w-full py-1 ${theme[color][variant]}`}>
         {children}
       </div>
-    </AccordianContext.Provider>
+    </AccordionContext.Provider>
   );
 };
 
-Accordian.Header = Header;
-Accordian.Body = Body;
+Accordion.Header = Header;
+Accordion.Body = Body;
 
-export default Accordian;
+export default Accordion;

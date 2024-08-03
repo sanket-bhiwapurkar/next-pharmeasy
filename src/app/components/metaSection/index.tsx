@@ -2,9 +2,13 @@ import React from "react";
 import { metaTexts, tags } from "./data";
 import { TypographyScale } from "@/app/constants/styles";
 
-const MetaSection = () => {
+interface MetaSectionProps {
+  className?: string;
+}
+
+const MetaSection: React.FC<MetaSectionProps> = ({ className }) => {
   return (
-    <div className="flex flex-col p-8 gap-8">
+    <div className={`flex flex-col gap-8 ${className}`}>
       {tags.map((eachGroup) => (
         <p
           className={`${TypographyScale.body2} font-semibold`}
