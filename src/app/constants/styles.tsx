@@ -1,263 +1,263 @@
 export const palette = {
-    primary: "#10847e",
-    secondary: "#eef4ff",
-    dark: "#30363C",
-}
+  primary: "#10847e",
+  secondary: "#eef4ff",
+  dark: "#30363C",
+};
 
 export const TypographyScale = {
-    h1: 'text-8xl',
-    h2: 'text-6xl',
-    h3: 'text-5xl',
-    h4: 'text-lg',
-    h5: 'text-2xl',
-    h6: 'text-xl',
-    subtitle1: "text-base leading-7",
-    subtitle2: "text-sm leading-6 font-semibold",
-    body1: "text-base leading-1",
-    body2: "text-sm",
-    button: "text-sm font-semibold",
-    caption: "text-xs leading-6",
-    overline: "text-sm leading-10",
-}
+  h1: "text-8xl",
+  h2: "text-6xl",
+  h3: "text-5xl",
+  h4: "text-4xl",
+  h5: "text-2xl",
+  h6: "text-xl",
+  subtitle1: "text-base leading-7",
+  subtitle2: "text-sm leading-6 font-semibold",
+  body1: "text-base leading-1",
+  body2: "text-sm",
+  button: "text-sm font-semibold",
+  caption: "text-xs leading-6",
+  overline: "text-sm leading-10",
+};
 
 export const iconSize = {
-    xs: 'text-sm',
-    small: "text-base",
-    medium: 'text-xl',
-    large: "text-2xl"
-}
+  xs: "text-sm",
+  small: "text-base",
+  medium: "text-xl",
+  large: "text-2xl",
+};
 
 export const elevations = {
-    0: "shadow-none",
-    1: "shadow-sm",
-    2: "shadow-md",
-    3: "shadow-lg",
-    4: "shadow-xl",
-    5: "shadow-2xl"
-}
+  0: "shadow-none",
+  1: "shadow-sm",
+  2: "shadow-md",
+  3: "shadow-lg",
+  4: "shadow-xl",
+  5: "shadow-2xl",
+};
 
 // Flex Box
 
 export const flexRow = {
-    display: "flex",
-    flexDirection: "row",
-}
+  display: "flex",
+  flexDirection: "row",
+};
 
 export const flexColumn = {
-    display: "flex",
-    flexDirection: "column",
-}
+  display: "flex",
+  flexDirection: "column",
+};
 
 export const alignStart = {
-    alignContent: "start",
-}
+  alignContent: "start",
+};
 
 export const alignCenter = {
-    alignItems: "center",
-}
+  alignItems: "center",
+};
 
 export const alignEnd = {
-    alignContent: "end",
-}
+  alignContent: "end",
+};
 
 export const justifyStart = {
-    justifyContent: "start"
-}
+  justifyContent: "start",
+};
 
 export const justifyCenter = {
-    justifyContent: "center"
-}
+  justifyContent: "center",
+};
 
 export const justifyEnd = {
-    justifyContent: "end"
-}
+  justifyContent: "end",
+};
 
 export const justifyBetween = {
-    justifyContent: "space-between"
-}
+  justifyContent: "space-between",
+};
 
 export const justifyAround = {
-    justifyContent: "space-around"
-}
+  justifyContent: "space-around",
+};
 
 export const flex_789_7 = {
-    ...flexRow,
-    ...alignStart,
-    ...justifyStart,
-}
+  ...flexRow,
+  ...alignStart,
+  ...justifyStart,
+};
 
 export const flex_789_8 = {
-    ...flexRow,
-    ...alignStart,
-    ...justifyCenter,
-}
+  ...flexRow,
+  ...alignStart,
+  ...justifyCenter,
+};
 
 export const flex_789_9 = {
-    ...flexRow,
-    ...alignStart,
-    ...justifyEnd,
-}
+  ...flexRow,
+  ...alignStart,
+  ...justifyEnd,
+};
 
 export const flex_789_79 = {
-    ...flexRow,
-    ...alignStart,
-    ...justifyBetween,
-}
+  ...flexRow,
+  ...alignStart,
+  ...justifyBetween,
+};
 
 export const flex_789_789 = {
-    ...flexRow,
-    ...alignStart,
-    ...justifyAround,
-}
+  ...flexRow,
+  ...alignStart,
+  ...justifyAround,
+};
 
 export const flex_456_4 = {
-    ...flexRow,
-    ...alignCenter,
-    ...justifyStart,
-}
+  ...flexRow,
+  ...alignCenter,
+  ...justifyStart,
+};
 
 export const flex_456_5 = {
-    ...flexRow,
-    ...alignCenter,
-    ...justifyCenter,
-}
+  ...flexRow,
+  ...alignCenter,
+  ...justifyCenter,
+};
 
 export const flex_456_6 = {
-    ...flexRow,
-    ...alignCenter,
-    ...justifyEnd,
-}
+  ...flexRow,
+  ...alignCenter,
+  ...justifyEnd,
+};
 
 export const flex_456_46 = {
-    ...flexRow,
-    ...alignCenter,
-    ...justifyBetween,
-}
+  ...flexRow,
+  ...alignCenter,
+  ...justifyBetween,
+};
 
 export const flex_456_456 = {
-    ...flexRow,
-    ...alignCenter,
-    ...justifyAround,
-}
+  ...flexRow,
+  ...alignCenter,
+  ...justifyAround,
+};
 
 export const flex_123_1 = {
-    ...flexRow,
-    ...alignEnd,
-    ...justifyStart
-}
+  ...flexRow,
+  ...alignEnd,
+  ...justifyStart,
+};
 
 export const flex_123_2 = {
-    ...flexRow,
-    ...alignEnd,
-    ...justifyCenter
-}
+  ...flexRow,
+  ...alignEnd,
+  ...justifyCenter,
+};
 
 export const flex_123_3 = {
-    ...flexRow,
-    ...alignEnd,
-    ...justifyEnd,
-}
+  ...flexRow,
+  ...alignEnd,
+  ...justifyEnd,
+};
 
 export const flex_123_13 = {
-    ...flexRow,
-    ...alignEnd,
-    ...justifyBetween,
-}
+  ...flexRow,
+  ...alignEnd,
+  ...justifyBetween,
+};
 
 export const flex_123_123 = {
-    ...flexRow,
-    ...alignEnd,
-    ...justifyAround
-}
+  ...flexRow,
+  ...alignEnd,
+  ...justifyAround,
+};
 
-// 
+//
 
 export const flex_741_7 = {
-    ...flexColumn,
-    ...alignStart,
-    ...justifyStart,
-}
+  ...flexColumn,
+  ...alignStart,
+  ...justifyStart,
+};
 
 export const flex_741_4 = {
-    ...flexColumn,
-    ...alignStart,
-    ...justifyCenter,
-}
+  ...flexColumn,
+  ...alignStart,
+  ...justifyCenter,
+};
 
 export const flex_741_1 = {
-    ...flexColumn,
-    ...alignStart,
-    ...justifyEnd,
-}
+  ...flexColumn,
+  ...alignStart,
+  ...justifyEnd,
+};
 
 export const flex_741_71 = {
-    ...flexColumn,
-    ...alignStart,
-    ...justifyBetween,
-}
+  ...flexColumn,
+  ...alignStart,
+  ...justifyBetween,
+};
 
 export const flex_741_741 = {
-    ...flexColumn,
-    ...alignStart,
-    ...justifyAround,
-}
+  ...flexColumn,
+  ...alignStart,
+  ...justifyAround,
+};
 
 export const flex_852_8 = {
-    ...flexColumn,
-    ...alignCenter,
-    ...justifyStart,
-}
+  ...flexColumn,
+  ...alignCenter,
+  ...justifyStart,
+};
 
 export const flex_852_5 = {
-    ...flexColumn,
-    ...alignCenter,
-    ...justifyCenter,
-}
+  ...flexColumn,
+  ...alignCenter,
+  ...justifyCenter,
+};
 
 export const flex_852_2 = {
-    ...flexColumn,
-    ...alignCenter,
-    ...justifyEnd,
-}
+  ...flexColumn,
+  ...alignCenter,
+  ...justifyEnd,
+};
 
 export const flex_852_82 = {
-    ...flexColumn,
-    ...alignCenter,
-    ...justifyBetween,
-}
+  ...flexColumn,
+  ...alignCenter,
+  ...justifyBetween,
+};
 
 export const flex_852_852 = {
-    ...flexColumn,
-    ...alignCenter,
-    ...justifyAround,
-}
+  ...flexColumn,
+  ...alignCenter,
+  ...justifyAround,
+};
 
 export const flex_963_9 = {
-    ...flexColumn,
-    ...alignEnd,
-    ...justifyStart
-}
+  ...flexColumn,
+  ...alignEnd,
+  ...justifyStart,
+};
 
 export const flex_963_6 = {
-    ...flexColumn,
-    ...alignEnd,
-    ...justifyCenter
-}
+  ...flexColumn,
+  ...alignEnd,
+  ...justifyCenter,
+};
 
 export const flex_963_3 = {
-    ...flexColumn,
-    ...alignEnd,
-    ...justifyEnd,
-}
+  ...flexColumn,
+  ...alignEnd,
+  ...justifyEnd,
+};
 
 export const flex_963_93 = {
-    ...flexColumn,
-    ...alignEnd,
-    ...justifyBetween,
-}
+  ...flexColumn,
+  ...alignEnd,
+  ...justifyBetween,
+};
 
 export const flex_963_963 = {
-    ...flexColumn,
-    ...alignEnd,
-    ...justifyAround
-}
+  ...flexColumn,
+  ...alignEnd,
+  ...justifyAround,
+};

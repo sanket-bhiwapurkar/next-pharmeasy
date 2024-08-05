@@ -14,7 +14,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       color="dark"
       variant="text"
       {...rest}
-      className={`${rest.className} rounded-full !p-0`}
+      className={`${rest.className} !justify-center rounded-full !p-0`}
     >
       {children}
     </Button>
