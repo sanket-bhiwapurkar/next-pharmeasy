@@ -138,3 +138,13 @@
 ## 20
 
 - `[ ]` editorial policy -
+
+<br>
+<br>
+<br>
+<br>
+
+- `[ ]` - Cards - Refactor classnames
+- `[ ]` - Cards - ?:
+- `[ ]` - Cards - image alr and width
+- `[ ]` - Cards - maybe alpha-beta be merged
