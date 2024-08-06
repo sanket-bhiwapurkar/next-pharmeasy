@@ -4,14 +4,14 @@ import React from 'react'
 
 interface BasicCardProps {
     className?: string;
-    imgUrl?: string;
+    imgUrl: string;
     title?: string;
     imageClassName?: string;
 }
 
-const BasicCard: React.FC<BasicCardProps> = ({ className, imgUrl = "/images/brands/611be7f660e-SugarfreeFB.png", title = "Lorem, ipsum.", imageClassName }) => {
+const BasicCard: React.FC<BasicCardProps> = ({ className, imgUrl, title, imageClassName }) => {
     return (
-        <div className={`flex flex-col gap-4 w-44 text-center ${className}`}>
+        <div className={`flex flex-col gap-4 text-center ${className}`}>
             <div className={`rounded-lg aspect-square w-full hover:shadow-lg ${imageClassName}`}>
                 <Image
                     alt="Brand"

@@ -16,7 +16,7 @@ interface SettingsProps {
 }
 interface LightSlickProps {
   children: ReactNode;
-  settings?: SettingsProps;
+  settings?: SettingsProps | undefined;
 }
 
 const LightSlick: React.FC<LightSlickProps> = ({ children, settings = {} }) => {
@@ -77,12 +77,12 @@ const LightSlick: React.FC<LightSlickProps> = ({ children, settings = {} }) => {
     }
   };
   return (
-    <div className={`px-5 relative`}>
+    <div className={`px-5 relative w-full`}>
       <IconButton
         color="dark"
         variant="contained"
         size="large"
-        className="!absolute top-1/2 -translate-y-1/2 left-0"
+        className="!absolute top-1/2 -translate-y-1/2 left-0 z-10"
         onClick={scrollLeft}
       >
         <FaAngleLeft />
@@ -91,14 +91,14 @@ const LightSlick: React.FC<LightSlickProps> = ({ children, settings = {} }) => {
         color="dark"
         variant="contained"
         size="large"
-        className="!absolute top-1/2 -translate-y-1/2 right-0"
+        className="!absolute top-1/2 -translate-y-1/2 right-0 z-10"
         onClick={scrollRight}
       >
         <FaAngleRight />
       </IconButton>
 
       <div
-        className="flex overflow-x-scroll no-scrollbar"
+        className="flex overflow-x-scroll no-scrollbar w-full"
         ref={containerRef}
         style={{ gap: `${gap}px` }}
       >

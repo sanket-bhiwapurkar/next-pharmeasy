@@ -10,11 +10,11 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ className, imgUrl = "/images/articles/celery-seed.webp", title = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi libero eveniet iure, nam sequi aspernatur excepturi." }) => {
     return (
-        <div className={`w-56 rounded-lg border border-gray-300 overflow-hidden hover:shadow-lg ${className}`}>
-            <div className="h-44">
+        <div className={`min-w-48 md:min-w-56 rounded-lg border border-gray-300 overflow-hidden hover:shadow-lg ${className}`}>
+            <div className="min-w-32 md:h-44">
                 <Image
                     alt="Article"
-                    className="w-full h-full rounded-lg object-cover"
+                    className="w-full h-full rounded-t-lg object-cover"
                     height={0}
                     src={imgUrl}
                     width={232}

@@ -5,21 +5,23 @@ import React from "react";
 interface OfferingsCardProps {
   className?: string;
   imageClassName?: string;
-  imgUrl?: string;
-  title?: string;
-  subtext?: string;
+  imgUrl: string;
+  title: string;
+  subtext: string;
+  url: string;
 }
 
 const OfferingsCard: React.FC<OfferingsCardProps> = ({
   className,
   imageClassName,
-  imgUrl = "/images/offerings/plus_ff.webp",
-  title = "Lorem, ipsum.",
-  subtext = "Lorem, ipsum.",
+  imgUrl,
+  title,
+  subtext,
+  url
 }) => {
   return (
     <div
-      className={`min-w-32 lg:aspect-square rounded-lg lg:w-36 text-center hover:lg:shadow-lg ${className} p-1`}
+      className={`flex flex-col flex-shrink min-w-24 md:min-w-32 lg:min-w-36 lg:aspect-square rounded-lg text-center hover:lg:shadow-lg ${className} p-1`}
     >
       <div
         className={`rounded-lg w-full border border-gray-300 lg:border-0 lg:px-5 mb-1 ${imageClassName} lg:bg-transparent`}
@@ -38,7 +40,7 @@ const OfferingsCard: React.FC<OfferingsCardProps> = ({
         {title}
       </p>
       <p
-        className={`text-danger font-semibold ${TypographyScale.caption} lg:leading-7`}
+        className={`text-danger font-semibold max-md:text-[10px] ${TypographyScale.caption} lg:leading-7`}
       >
         {subtext}
       </p>

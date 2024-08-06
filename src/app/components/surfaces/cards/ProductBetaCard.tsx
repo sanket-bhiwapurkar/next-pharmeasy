@@ -4,27 +4,27 @@ import React from 'react'
 interface ProductBetaCardProps {
     clasName?: string;
     imageClassName?: string;
-    imgUrl?: string;
-    orientation: "vertical" | "horizontal"
-    title?: string;
-    mp?: number;
-    sp?: number;
-    discount?: number;
+    imgUrl: string;
+    orientation?: "vertical" | "horizontal"
+    title: string;
+    mp: number;
+    sp: number;
+    discount: number;
 }
 
 const ProductBetaCard: React.FC<ProductBetaCardProps> = ({
     clasName,
     imageClassName,
     imgUrl = "/images/brands/611be7f660e-SugarfreeFB.png",
-    orientation,
+    orientation = 'vertical',
     title = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur velit sunt odio!",
     mp = 100.00,
     sp = 100.00,
     discount = 15,
 }) => {
     return (
-        <div className={`flex ${orientation === 'vertical' ? 'flex-col w-32 lg:w-44' : "w-64 lg:w-96"} gap-3 ${clasName}`}>
-            <div className={`rounded-lg !aspect-square w-full border border-gray-300  hover:shadow-lg ${imageClassName}`}>
+        <div className={`flex items-start min-w-32 ${orientation === 'vertical' ? 'flex-col lg:min-w-44' : "w-64 lg:min-w-96"} gap-3 ${clasName}`}>
+            <div className={`rounded-lg !aspect-square ${orientation === 'vertical' ? 'w-full' : "w-2/5"} border border-gray-300  hover:shadow-lg p-4 ${imageClassName}`}>
                 <Image
                     alt="Brand"
                     className={`w-full h-full rounded-lg object-cover`}
@@ -33,7 +33,7 @@ const ProductBetaCard: React.FC<ProductBetaCardProps> = ({
                     width={200}
                 />
             </div>
-            <div className='flex flex-col gap-2 font-semibold'>
+            <div className={`flex flex-col gap-2 font-semibold ${orientation === 'vertical' ? '' : "w-3/5"}`}>
                 <p className='max-lg:text-xs font-medium line-clamp-2 mb-1'>{title}</p>
                 <p className='text-xs lg:text-sm text-gray-500'>MRP <span className='line-through'>₹{mp}</span></p>
 
@@ -43,7 +43,7 @@ const ProductBetaCard: React.FC<ProductBetaCardProps> = ({
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 
