@@ -1,10 +1,10 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import theme from "../theme";
+import theme from "../../theme";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "./components/layout/header";
-import Footer from "./components/layout/footer";
+import "../globals.css";
+import Header from "../components/layout/header";
+import Footer from "../components/layout/footer";
 import { ThemeProvider } from "@mui/material/styles";
 
 const inter = Inter({ subsets: ["latin"] });
