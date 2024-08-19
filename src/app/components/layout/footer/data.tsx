@@ -6,29 +6,29 @@ export var footerNavData = [
       {
         id: "about-us",
         title: "About Us",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "careers",
         title: "Careers",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "blog",
         title: "Blog",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "partner-with-pharmeasy",
         title: "Partner with PharmEasy",
-        linkUrl: ""
+        linkUrl: "/franchisestores",
       },
       {
         id: "sell-at-pharmeasy",
         title: "Sell at PharmEasy",
-        linkUrl: ""
-      }
-    ]
+        linkUrl: "",
+      },
+    ],
   },
   {
     id: "our-services",
@@ -37,24 +37,24 @@ export var footerNavData = [
       {
         id: "order-machine",
         title: "Order Machine",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "healthcare-products",
         title: "Healthcare Products",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "lab-test",
         title: "Lab Tests",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "find-nearest-collection-center",
         title: "Find Nearest Collection Center",
-        linkUrl: ""
+        linkUrl: "/franchise-labs",
       },
-    ]
+    ],
   },
   {
     id: "featured-categories",
@@ -63,84 +63,84 @@ export var footerNavData = [
       {
         id: "mest-haves",
         title: "Must Haves",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "elderly-care",
         title: "Elderly Care",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "personal-care",
         title: "Personal Care",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "healthcare-devices",
         title: "Healthcare Devices",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "health-food-and-drinks",
         title: "Health Food and Drinks",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "skin-care",
         title: "Skin Care",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "mother-and-baby-care",
         title: "Mother and Baby Care",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "accessories-and-wearables",
         title: "Accessories & Wearables",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "fitness-supplements",
         title: "Fitness Supplements",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "ayurvedic-care",
         title: "Ayurvedic Care",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "sexual-wellness",
         title: "Sexual Wellness",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "diabetic-care",
         title: "Diabetic Care",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "health-condition",
         title: "Health Condition",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "home-care",
         title: "Home Care",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "trending-products",
         title: "Trending Products",
-        linkUrl: ""
+        linkUrl: "",
       },
       {
         id: "oral-care",
         title: "Oral Care",
-        linkUrl: ""
+        linkUrl: "",
       },
-    ]
+    ],
   },
   {
     id: "need-help",
@@ -149,14 +149,18 @@ export var footerNavData = [
       {
         id: "browse-all-medicines",
         title: "Browse All Medicines",
-        linkUrl: ""
+        linkUrl: "",
       },
-      { id: "browse-all-molecules", title: "Browse All Molecules", linkUrl: "" },
+      {
+        id: "browse-all-molecules",
+        title: "Browse All Molecules",
+        linkUrl: "",
+      },
       { id: "browse-all-cities", title: "Browse All Cities", linkUrl: "" },
       { id: "browse-all-areas", title: "Browse All Areas", linkUrl: "" },
       { id: "browse-all-stores", title: "Browse All Stores", linkUrl: "" },
-      { id: "faqs", title: "FAQs", linkUrl: "" }
-    ]
+      { id: "faqs", title: "FAQs", linkUrl: "" },
+    ],
   },
   {
     id: "privacy-policy",
@@ -164,56 +168,68 @@ export var footerNavData = [
     navigations: [
       { id: "editorial-policy", title: "Editorial Policy", linkUrl: "" },
       { id: "privacy-policy", title: "Privacy Policy", linkUrl: "" },
-      { id: "vulnerability-disclosure-policy", title: "Vulnerability Disclosure Policy", linkUrl: "" },
-      { id: "terms-and-conditions", title: "Terms and Conditions", linkUrl: "" },
-      { id: "customer-support-policy", title: "Customer Support Policy", linkUrl: "" },
+      {
+        id: "vulnerability-disclosure-policy",
+        title: "Vulnerability Disclosure Policy",
+        linkUrl: "",
+      },
+      {
+        id: "terms-and-conditions",
+        title: "Terms and Conditions",
+        linkUrl: "",
+      },
+      {
+        id: "customer-support-policy",
+        title: "Customer Support Policy",
+        linkUrl: "",
+      },
       { id: "return-policy", title: "Return Policy", linkUrl: "" },
-      { id: "smartbuy-policy", title: "Smartbuy Policy", linkUrl: "" }
-    ]
+      { id: "smartbuy-policy", title: "Smartbuy Policy", linkUrl: "" },
+    ],
   },
-]
+];
 
 export var mobileAppData = [
   {
     id: "google-play",
     title: "Google Play",
     imgUrl: "/images/mobile-app/googlePlay.svg",
-    linkUrl: ""
+    linkUrl: "",
   },
   {
     id: "app-store",
     title: "App Store",
     imgUrl: "/images/mobile-app/appStore.svg",
-    linkUrl: ""
+    linkUrl: "",
   },
-]
+];
 
 export var followUsData = [
   {
     id: "instagram",
     title: "Instagram",
     imgUrl: "/images/social/Instagram.svg",
-    linkUrl: ""
+    linkUrl: "",
   },
   {
     id: "facebook",
     title: "Facebook",
     imgUrl: "/images/social/facebook.svg",
-    linkUrl: ""
+    linkUrl: "",
   },
   {
     id: "youtube",
     title: "Youtube",
     imgUrl: "/images/social/Youtube.svg",
-    linkUrl: ""
+    linkUrl: "",
   },
   {
     id: "twitter",
     title: "Twitter",
     imgUrl: "/images/social/Twitter.svg",
-    linkUrl: ""
+    linkUrl: "",
   },
-]
+];
 
 export var paymentMethodsData = [
   {
@@ -266,5 +282,4 @@ export var paymentMethodsData = [
     title: "Rupay",
     imgUrl: "/images/payment-methods/rupay.png",
   },
-
-]
+];

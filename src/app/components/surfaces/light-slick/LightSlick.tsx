@@ -24,7 +24,6 @@ const LightSlick: React.FC<LightSlickProps> = ({ children, settings = {} }) => {
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [firstChildWidth, setFirstChildWidth] = useState<number>(0);
-  console.log(firstChildWidth);
 
   const scrollByAmount = (amount: number) => {
     if (containerRef.current) {

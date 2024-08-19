@@ -1,3 +1,4 @@
+"use client";
 import { forwardRef, MouseEvent, useRef, useState } from "react";
 import { ButtonBase, ButtonBaseProps } from "./ButtonBase";
 import { elevations } from "@/app/constants/styles";

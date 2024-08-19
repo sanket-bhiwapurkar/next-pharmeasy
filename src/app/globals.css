@@ -7,6 +7,15 @@
     font-family: "Inter", sans-serif;
 }
 
+a.lit {
+    color: #10847e;
+    font-weight: 600;
+}
+
+a.lit:hover {
+    color: #30363C;
+}
+
 @keyframes ripple-animation {
     0% {
         transform: scale(1);

@@ -23,6 +23,9 @@ const config: Config = {
         warning: "#fc8019",
       }
     },
+    fontSize:{
+      xsm: "0.675rem"
+    }
   },
   plugins: [],
 };

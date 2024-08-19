@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import SectionHeader from "../components/data-display/divider/SectionHeader";
+import SectionHeader from "../components/data-display/SectionHeader";
 import MetaSection from "../components/metaSection";
 import LightSlick from "../components/surfaces/light-slick/LightSlick";
 import OfferingsCard from "../components/surfaces/cards/OfferingsCard";

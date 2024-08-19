@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import { Button } from "../inputs/buttons/Button";
+import { Button } from "../../inputs/buttons/Button";
 import { FaAngleDown } from "react-icons/fa6";
 
 const theme: { [key: string]: { [key: string]: string } } = {

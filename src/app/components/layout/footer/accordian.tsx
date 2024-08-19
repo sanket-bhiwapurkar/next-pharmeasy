@@ -1,8 +1,7 @@
 "use client";
 import * as React from "react";
-import { FaAngleDown } from "react-icons/fa6";
 import Link from "next/link";
-import Accordion from "../../surfaces/Accordion";
+import Accordion from "../../surfaces/accordion";
 
 interface NavigationItem {
   id: string;
