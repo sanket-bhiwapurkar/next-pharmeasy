@@ -21,11 +21,12 @@ const config: Config = {
         disabled: "#949494",
         info: "#8573e1", //violet
         warning: "#fc8019",
+      },
+      fontSize:{
+        xsm: "0.675rem"
       }
     },
-    fontSize:{
-      xsm: "0.675rem"
-    }
+    
   },
   plugins: [],
 };
