@@ -28,7 +28,7 @@ const bodypx: { [key: string]: string } = {
 };
 
 const Header = ({ children }: any) => {
-  const { toggleActive, isActive, size, color } = useContext(AccordionContext);
+  const { toggleActive, isActive, size, color } = useAccordionContext();
   return (
     <Button
       className="w-100 font-semibold"
@@ -50,7 +50,7 @@ const Header = ({ children }: any) => {
   );
 };
 const Body = ({ children }: any) => {
-  const { isActive, size } = useContext(AccordionContext);
+  const { isActive, size } = useAccordionContext();
   return isActive ? (
     <div className={`${bodypx[size]} py-2`}>{children}</div>
   ) : null;
@@ -66,6 +66,16 @@ interface AccordionContextProps {
 const AccordionContext = createContext<AccordionContextProps | undefined>(
   undefined
 );
+
+export const useAccordionContext = (): AccordionContextProps => {
+  const context = useContext(AccordionContext);
+  if (!context) {
+    throw new Error(
+      "useAccordionContext must be used within an AccordionProvider"
+    );
+  }
+  return context;
+};
 
 interface AccordionProps {
   children: React.ReactNode;

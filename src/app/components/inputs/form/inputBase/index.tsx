@@ -23,7 +23,9 @@ export const InputBase: React.FC<InputBaseProps> = ({
   ...props
 }) => {
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFilled(e.target.value !== "");
+    if (setFilled) {
+      setFilled(e.target.value !== "");
+    }
   };
   return (
     <input

@@ -18,7 +18,7 @@ export interface ButtonProps extends ButtonBaseProps {
   variant?: "contained" | "outlined" | "text" | "flipped";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | string;
   elevation?: 0 | 1 | 2 | 3 | 4 | 5;
   fab?: boolean;
   disableRipple?: boolean;
