@@ -1,24 +1,24 @@
 ## 1
 
 - `[ ]` Homepage - Search
-- `[ ]` Homepage - offerings
+- `[X]` Homepage - offerings
 - `[ ]` Homepage - Banner
-- `[ ]` Homepage - Lab tests by health
+- `[X]` Homepage - Lab tests by health
 - `[ ]` Homepage - Order with prescription
-- `[ ]` Homepage - Shop by categories
-- `[ ]` Homepage - New launches
-- `[ ]` Homepage - Trending near you
+- `[X]` Homepage - Shop by categories
+- `[X]` Homepage - New launches
+- `[X]` Homepage - Trending near you
 - `[ ]` Homepage - Ad
 - `[ ]` Homepage - Frequently booked lab tests
-- `[ ]` Homepage - Wellness essentials of the week
-- `[ ]` Homepage - Featured brands
-- `[ ]` Homepage - Deals of the day
-- `[ ]` Homepage - In the Spotlight
+- `[X]` Homepage - Wellness essentials of the week
+- `[X]` Homepage - Featured brands
+- `[X]` Homepage - Deals of the day
+- `[X]` Homepage - In the Spotlight
 - `[ ]` Homepage - Banner
-- `[ ]` Homepage - Health Articles
+- `[X]` Homepage - Health Articles
 - `[ ]` Homepage - Why choose us
 - `[ ]` Homepage - Review
-- `[ ]` Homepage - Meta tags and texts
+- `[X]` Homepage - Meta tags and texts
 
 ## Header links
 
