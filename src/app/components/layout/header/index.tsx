@@ -24,8 +24,31 @@ const Header = () => {
         {renderLogoSection()}
         {renderActionGroup()}
       </div>
-      <div className="bg-transparent flex items-center lg:none h-8 shadow">
+      <div className="bg-transparent flex items-center lg:hidden h-8 shadow">
         {renderDelivery(true)}
+      </div>
+      <div className="bg-transparent max-lg:overflow-x-scroll no-scrollbar flex items-center justify-center h-10 shadow w-screen">
+        <Link href="/" className="hover:text-primary text-sm px-4 text-nowrap">
+          Medicine
+        </Link>
+        <Link href="/" className="hover:text-primary text-sm px-4 text-nowrap">
+          Lab Tests
+        </Link>
+        <Link href="/" className="hover:text-primary text-sm px-4 text-nowrap">
+          Healthcare
+        </Link>
+        <Link href="/" className="hover:text-primary text-sm px-4 text-nowrap">
+          Health Blogs
+        </Link>
+        <Link href="/" className="hover:text-primary text-sm px-4 text-nowrap">
+          PLUS
+        </Link>
+        <Link href="/" className="hover:text-primary text-sm px-4 text-nowrap">
+          Offers
+        </Link>
+        <Link href="/" className="hover:text-primary text-sm px-4 text-nowrap">
+          Value Store
+        </Link>
       </div>
     </header>
   );

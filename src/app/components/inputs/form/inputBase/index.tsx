@@ -5,6 +5,7 @@ export interface InputBaseProps {
   type?: "text" | "password" | "email" | "number" | string;
   id: string;
   name: string;
+  placeholder?: string;
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   setFilled?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
@@ -20,6 +21,7 @@ export const InputBase: React.FC<InputBaseProps> = ({
   onBlur,
   setFilled,
   required,
+  placeholder,
   ...props
 }) => {
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -32,11 +34,12 @@ export const InputBase: React.FC<InputBaseProps> = ({
       type={type}
       id={id}
       name={name}
-      className={className}
+      className={`outline-none ${className}`}
       onFocus={onFocus}
       onBlur={onBlur}
       onChange={(e) => handleOnChange(e)}
       required={required}
+      placeholder={placeholder}
       {...props}
     />
   );

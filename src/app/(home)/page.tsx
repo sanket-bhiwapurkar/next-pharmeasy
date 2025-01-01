@@ -16,10 +16,32 @@ import BasicCard from "../components/surfaces/cards/BasicCard";
 import pairArray from "../services/pairArray";
 import ProductBetaCard from "../components/surfaces/cards/ProductBetaCard";
 import ArticleCard from "../components/surfaces/cards/ArticleCard";
+import { Input } from "postcss";
+import SearchInput from "../components/inputs/form/searchInput";
+import { BiDetail } from "react-icons/bi";
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
+      {/* Search */}
+      <div className="flex flex-col items-center py-6 gap-4 bg-duo-radial">
+        <SectionHeader head="What are you looking for?" />
+        <div className="w-full px-4">
+          <SearchInput />
+        </div>
+        <div className="flex items-center justify-center gap-2 p-2 border-y border-green-200 bg-green-50 w-full mt-4">
+          <BiDetail className="text-2xl" />
+          <p className="text-sm">
+            Order with prescription.
+            <span className="text-xs">
+              <a href="#" className="text-primary font-semibold">
+                {" "}
+                UPLOAD NOW &gt;
+              </a>
+            </span>
+          </p>
+        </div>
+      </div>
       {/* Offerings */}
       <section className="py-8 px-4 flex flex-col mt-6 gap-4 w-full items-center">
         <SectionHeader

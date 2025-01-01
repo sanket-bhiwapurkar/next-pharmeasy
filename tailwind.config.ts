@@ -12,6 +12,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "duo-radial":
+          "radial-gradient(150px 150px at 95% 0%, rgba(253, 186, 43, 0.3) 0%, rgba(253, 186, 43, 0) 100%), radial-gradient(150px 150px at 5% 0%, rgba(120, 213, 242, 0.3) 0%, rgba(253, 186, 43, 0) 100%)",
       },
       colors: {
         primary: "#10847e",
@@ -22,11 +24,10 @@ const config: Config = {
         info: "#8573e1", //violet
         warning: "#fc8019",
       },
-      fontSize:{
-        xsm: "0.675rem"
-      }
+      fontSize: {
+        xsm: "0.675rem",
+      },
     },
-    
   },
   plugins: [],
 };

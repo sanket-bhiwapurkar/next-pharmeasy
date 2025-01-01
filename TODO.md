@@ -1,6 +1,6 @@
 ## 1
 
-- `[ ]` Homepage - Search
+- `[X]` Homepage - Search
 - `[X]` Homepage - offerings
 - `[ ]` Homepage - Banner
 - `[X]` Homepage - Lab tests by health
