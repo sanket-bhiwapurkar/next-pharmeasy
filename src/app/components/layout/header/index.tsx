@@ -46,14 +46,14 @@ function renderLogoSection() {
           alt="logo"
           className="lg:hidden"
           height={0}
-          src="/images/pharmeasy-logos/logo-wo-slogan.svg "
+          src="/images/pharmeasy-logos/logo-wo-slogan.svg"
           width={106}
         />
         <Image
           alt="logo"
           className="hidden lg:block"
           height={0}
-          src="/images/pharmeasy-logos/logo_big.svg "
+          src="/images/pharmeasy-logos/logo_big.svg"
           width={150}
         />
       </Link>
